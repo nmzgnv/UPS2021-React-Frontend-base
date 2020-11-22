@@ -1,7 +1,7 @@
 import './App.css';
-import NameText from './NameText'
-import JinguLogo from './JinguLogo'
-import Emoji from './Emoji'
+import NameText from './Components/NameText'
+import JinguLogo from './Components/JinguLogo'
+import Emoji from './Components/Emoji'
 
 function App() {
   return (
