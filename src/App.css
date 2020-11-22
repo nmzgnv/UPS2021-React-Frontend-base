@@ -1,38 +1,95 @@
 .App {
+  padding: 50px 200px 0 200px;
   text-align: center;
+  display: grid;
+  box-sizing: border-box;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  text-justify: auto;
+  align-items: center;
+  grid-template-areas:
+    "NameText JinguLogo"
+    "Emoji ."
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.Name-text {
+  grid-area: NameText;
+  font-size: 5em;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 135px;
+  margin: 0;
+  color: #000000; 
+  text-align: start;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+
+.Jingu-logo {
+  grid-area: JinguLogo;
+  height: 210px;
+  border-radius: 50%;
+  min-height: 50px;
+  justify-self: center;
+}
+
+.Emoji {
+  grid-area: Emoji; 
+  font-size: 205px;
+  font-weight: 500;
+  margin: 0;
+  font-style: normal;
+  justify-self: flex-start;
+  animation: rotate infinite;
+  animation-duration: 5s;
+  animation-delay: 0s;
+}
+
+
+@media only screen and (max-width: 640px) {
+  .App{
+    padding: 0;
+    height: calc(100vh - 60px);
+    min-height: 100%;
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: stretch;
+    box-sizing: unset;
+  }
+
+  .Name-text{
+    font-size: 40px;
+    margin: 86px auto;
+    text-align: center;
+    order:1;
+  }
+  .Emoji{
+    font-size: 80px;
+    order: 2;
+  }
+  .Jingu-logo{
+    margin-top: 121px;
+    width: 210px;
+    min-width: 210px;
+    min-height: 210px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
+@keyframes rotate {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  
+  50% {
     transform: rotate(360deg);
   }
+  
+  100% {
+    transform: rotate(0deg);
+  }
 }
+
